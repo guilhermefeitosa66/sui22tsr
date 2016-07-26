@@ -2,7 +2,10 @@
 Semantic UI 2.2 Template Scaffold for Rails
 
 Clone this repository in lib/ folder in your rails project named templates:
-* git clone https://github.com/guilhermefeitosa66/bs334ts.git templates
+
+```sh
+$ git clone https://github.com/guilhermefeitosa66/bs334ts.git templates
+```
 
 In application.rb add this:
 
@@ -13,7 +16,10 @@ In application.rb add this:
 ```
 
 To generate only the views just run:
-* rails g erb:scaffold post attribute_a:type attribute_b:type
+
+```sh
+$ rails g erb:scaffold post attribute_a:type attribute_b:type
+```
 
 # Tested in version:
 * rails 4.2.6
