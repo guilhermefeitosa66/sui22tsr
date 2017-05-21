@@ -4,7 +4,7 @@ Semantic UI 2.2 Template Scaffold for Rails
 Clone this repository in lib/ folder in your rails project named templates:
 
 ```sh
-$ git clone https://github.com/guilhermefeitosa66/bs334ts.git templates
+$ git clone https://github.com/guilhermefeitosa66/sui22tsr.git templates
 ```
 
 In application.rb add this:
