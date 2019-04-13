@@ -24,9 +24,9 @@
           <% end -%>
           <td>
             <div class="ui buttons">
-            <%%= link_to 'Exibir', <%= singular_table_name %>, class: 'ui blue basic button' %>
-            <%%= link_to 'Editar', edit_<%= singular_table_name %>_path(<%= singular_table_name %>), class: 'ui blue basic button' %>
-            <%%= link_to 'Remover', <%= singular_table_name %>, method: :delete, data: { confirm: 'Você tem certeza?' }, class: 'ui red basic button' %>
+            <%%= link_to 'Exibir', <%= singular_table_name %>, class: 'ui blue button' %>
+            <%%= link_to 'Editar', edit_<%= singular_table_name %>_path(<%= singular_table_name %>), class: 'ui blue button' %>
+            <button class="ui red button remover" data-id="<%%= <%= singular_table_name %>.id %>">Remover</button>
             </div>
           </td>
         </tr>
@@ -35,3 +35,34 @@
   </table>
 
 </div>
+
+
+<div class="ui basic modal">
+  <div class="ui icon header">
+    <center>
+    <h2>Atenção!</h2>
+    <i class="trash alternate icon"></i>
+    </center>
+  </div>
+  <div class="content">
+    <center><p>Deseja realmente apagar esse registro?</p></center>
+  </div>
+  <div class="actions">
+    <center>
+    <div class="ui grey basic cancel inverted button">
+      <i class="remove icon"></i>
+      Cancelar
+    </div>
+
+    <a id="modal-remove-link" class="ui red ok inverted button" rel="nofollow" data-method="delete" href="<%= plural_table_name %>/">Apagar</a>
+    </center>
+  </div>
+</div>
+
+<script>
+  $('.remover').click( function(e){
+    e.preventDefault();
+    document.getElementById('modal-remove-link').setAttribute('href', '<%= plural_table_name %>/' + this.dataset.id);
+    $('.ui.basic.modal').modal('show');
+  });
+</script>
